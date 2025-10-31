@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Nick Papadakis | About me</title>
+  <link href="mystyle.css" rel="stylesheet" type="text/css" />
+  <link rel="alternate" href="https://nickpapadakis.gr/index.html" hreflang="el" />
+  <link rel="alternate" href="https://nickpapadakis.gr/en/index.html" hreflang="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nick Papadakis - Computer Science student portfolio and projects." />
+  <meta name="keywords" content="Nick Papadakis, portfolio, projects, computer science">
+  <link rel="icon" type="image/png" href="media/logo.png">
+</head>
+
+<body>
+  <div id="container">
+    <header class="header">
+      <a href="NickPapadakis_CV.pdf" class="cv-btn" download>Download CV</a>
+
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2 class="subhead">Get in Touch</h2>
+
+      <section class="contact-grid">
+        <article class="contact-card">
+          <h3 class="contact-title">Send a Message</h3>
+          <form class="contact-form" action="mailto:randommail@gmail.com" method="post" enctype="text/plain">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+            </div>
+            <button class="send-btn" type="submit">Send</button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-copy');
+          navigator.clipboard.writeText(val).then(() => {
+            const old = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = old, 900);
+          });
+        });
+      });
+    </script>
+
+    <footer class="site-footer">
+      <p>© 2025 Nick Papadakis. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
